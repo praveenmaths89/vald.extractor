@@ -223,7 +223,7 @@ The R Journal article will focus on:
 If you use `vald.extractor` in published research, please cite:
 
 ```
-Chougale PD, Anathakumar U (2026). vald.extractor: Robust Pipeline for VALD
+Chougale PD, Ananthakumar U (2026). vald.extractor: Robust Pipeline for VALD
 ForceDecks Data Extraction and Analysis. R package version 0.1.0.
 https://github.com/praveenmaths89/vald.extractor
 ```
