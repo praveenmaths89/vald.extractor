@@ -32,24 +32,26 @@
 #' @importFrom dplyr bind_rows
 #'
 #' @examples
-#' \dontrun{
-#' # Set VALD credentials first
-#' valdr::set_credentials(
-#'   client_id = "your_client_id",
-#'   client_secret = "your_client_secret",
-#'   tenant_id = "your_tenant_id",
-#'   region = "aue"
-#' )
+#' \donttest{
+#' if (FALSE) {
+#'   # Set VALD credentials first
+#'   valdr::set_credentials(
+#'     client_id = "your_client_id",
+#'     client_secret = "your_client_secret",
+#'     tenant_id = "your_tenant_id",
+#'     region = "aue"
+#'   )
 #'
-#' # Fetch data from 2020 onwards in chunks of 100
-#' vald_data <- fetch_vald_batch(
-#'   start_date = "2020-01-01T00:00:00Z",
-#'   chunk_size = 100
-#' )
+#'   # Fetch data from 2020 onwards in chunks of 100
+#'   vald_data <- fetch_vald_batch(
+#'     start_date = "2020-01-01T00:00:00Z",
+#'     chunk_size = 100
+#'   )
 #'
-#' # Access tests and trials
-#' tests_df <- vald_data$tests
-#' trials_df <- vald_data$trials
+#'   # Access tests and trials
+#'   tests_df <- vald_data$tests
+#'   trials_df <- vald_data$trials
+#' }
 #' }
 fetch_vald_batch <- function(start_date, chunk_size = 100, verbose = TRUE) {
 
@@ -57,6 +59,8 @@ fetch_vald_batch <- function(start_date, chunk_size = 100, verbose = TRUE) {
     stop("Package 'valdr' is required but not installed. Install it with: install.packages('valdr')")
   }
 
+  old_timeout <- getOption("timeout")
+  on.exit(options(timeout = old_timeout), add = TRUE)
   options(timeout = 18000)
 
   valdr::set_start_date(start_date)

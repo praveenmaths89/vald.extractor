@@ -40,16 +40,18 @@ performance differences between populations.
 Compare Performance Across Groups
 }
 \examples{
-\dontrun{
-test_datasets <- split_by_test(final_analysis_data)
+\donttest{
+if (FALSE) {
+  test_datasets <- split_by_test(final_analysis_data)
 
-# Compare CMJ peak force across sports and sex
-plot_vald_compare(
-  data = test_datasets$CMJ,
-  metric_col = "PEAK_FORCE_Both",
-  group_col = "sports",
-  fill_col = "sex",
-  title = "Peak Force Comparison by Sport and Sex"
-)
+  # Compare CMJ peak force across sports and sex
+  plot_vald_compare(
+    data = test_datasets$CMJ,
+    metric_col = "PEAK_FORCE_Both",
+    group_col = "sports",
+    fill_col = "sex",
+    title = "Peak Force Comparison by Sport and Sex"
+  )
+}
 }
 }

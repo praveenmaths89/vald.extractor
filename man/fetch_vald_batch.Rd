@@ -39,23 +39,25 @@ The chunking strategy is essential for large organizations with thousands of tes
 as it prevents API timeout errors and reduces memory pressure.
 }
 \examples{
-\dontrun{
-# Set VALD credentials first
-valdr::set_credentials(
-  client_id = "your_client_id",
-  client_secret = "your_client_secret",
-  tenant_id = "your_tenant_id",
-  region = "aue"
-)
+\donttest{
+if (FALSE) {
+  # Set VALD credentials first
+  valdr::set_credentials(
+    client_id = "your_client_id",
+    client_secret = "your_client_secret",
+    tenant_id = "your_tenant_id",
+    region = "aue"
+  )
 
-# Fetch data from 2020 onwards in chunks of 100
-vald_data <- fetch_vald_batch(
-  start_date = "2020-01-01T00:00:00Z",
-  chunk_size = 100
-)
+  # Fetch data from 2020 onwards in chunks of 100
+  vald_data <- fetch_vald_batch(
+    start_date = "2020-01-01T00:00:00Z",
+    chunk_size = 100
+  )
 
-# Access tests and trials
-tests_df <- vald_data$tests
-trials_df <- vald_data$trials
+  # Access tests and trials
+  tests_df <- vald_data$tests
+  trials_df <- vald_data$trials
+}
 }
 }

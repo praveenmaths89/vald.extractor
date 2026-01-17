@@ -1,0 +1,14 @@
+vald.extractor
+valdr
+dplyr
+tidyr
+ggplot2
+data.table
+readxl
+httr
+jsonlite
+stringr
+lubridate
+knitr
+rmarkdown
+rjtools

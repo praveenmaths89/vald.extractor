@@ -30,19 +30,21 @@
 #' @importFrom stringr str_ends str_remove
 #'
 #' @examples
-#' \dontrun{
-#' # After joining tests, trials, and metadata into wide format
-#' test_datasets <- split_by_test(
-#'   data = final_analysis_data,
-#'   metadata_cols = c("profileId", "sex", "Testdate", "age", "sports")
-#' )
+#' \donttest{
+#' if (FALSE) {
+#'   # After joining tests, trials, and metadata into wide format
+#'   test_datasets <- split_by_test(
+#'     data = final_analysis_data,
+#'     metadata_cols = c("profileId", "sex", "Testdate", "age", "sports")
+#'   )
 #'
-#' # Access individual test datasets
-#' cmj_data <- test_datasets$CMJ
-#' dj_data <- test_datasets$DJ
+#'   # Access individual test datasets
+#'   cmj_data <- test_datasets$CMJ
+#'   dj_data <- test_datasets$DJ
 #'
-#' # Note: Column names are now generic (e.g., "PEAK_FORCE_Both" not "PEAK_FORCE_Both_CMJ")
-#' # This allows you to write one function that works for all test types
+#'   # Note: Column names are now generic (e.g., "PEAK_FORCE_Both" not "PEAK_FORCE_Both_CMJ")
+#'   # This allows you to write one function that works for all test types
+#' }
 #' }
 split_by_test <- function(data, metadata_cols = NULL, verbose = TRUE) {
 
@@ -131,17 +133,19 @@ split_by_test <- function(data, metadata_cols = NULL, verbose = TRUE) {
 #' @importFrom stats setNames
 #'
 #' @examples
-#' \dontrun{
-#' # Create an Excel file with columns: profileId, sex, dateOfBirth
-#' # Then patch the metadata
-#' patched_data <- patch_metadata(
-#'   data = athlete_metadata,
-#'   patch_file = "corrections.xlsx",
-#'   fields_to_patch = c("sex", "dateOfBirth")
-#' )
+#' \donttest{
+#' if (FALSE) {
+#'   # Create an Excel file with columns: profileId, sex, dateOfBirth
+#'   # Then patch the metadata
+#'   patched_data <- patch_metadata(
+#'     data = athlete_metadata,
+#'     patch_file = "corrections.xlsx",
+#'     fields_to_patch = c("sex", "dateOfBirth")
+#'   )
 #'
-#' # Check results
-#' table(patched_data$sex)
+#'   # Check results
+#'   table(patched_data$sex)
+#' }
 #' }
 patch_metadata <- function(data, patch_file, patch_sheet = 1,
                           id_col = "profileId",

@@ -43,27 +43,29 @@ adaptations, injury recovery, and seasonal trends.
 Plot Longitudinal Trends for VALD Metrics
 }
 \examples{
-\dontrun{
-test_datasets <- split_by_test(final_analysis_data)
+\donttest{
+if (FALSE) {
+  test_datasets <- split_by_test(final_analysis_data)
 
-# Plot individual athlete trends
-plot_vald_trends(
-  data = test_datasets$CMJ,
-  metric_col = "PEAK_FORCE_Both",
-  group_col = "profileId",
-  facet_col = "sex"
-)
+  # Plot individual athlete trends
+  plot_vald_trends(
+    data = test_datasets$CMJ,
+    metric_col = "PEAK_FORCE_Both",
+    group_col = "profileId",
+    facet_col = "sex"
+  )
 
-# Plot sport-level averages
-sport_avg <- test_datasets$CMJ \%>\%
-  group_by(Testdate, sports) \%>\%
-  summarise(avg_force = mean(PEAK_FORCE_Both, na.rm = TRUE))
+  # Plot sport-level averages
+  sport_avg <- test_datasets$CMJ \%>\%
+    group_by(Testdate, sports) \%>\%
+    summarise(avg_force = mean(PEAK_FORCE_Both, na.rm = TRUE))
 
-plot_vald_trends(
-  data = sport_avg,
-  date_col = "Testdate",
-  metric_col = "avg_force",
-  group_col = "sports"
-)
+  plot_vald_trends(
+    data = sport_avg,
+    date_col = "Testdate",
+    metric_col = "avg_force",
+    group_col = "sports"
+  )
+}
 }
 }

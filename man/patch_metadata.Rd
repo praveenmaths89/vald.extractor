@@ -43,16 +43,18 @@ and updates the master metadata.
 Patch Missing Metadata from External File
 }
 \examples{
-\dontrun{
-# Create an Excel file with columns: profileId, sex, dateOfBirth
-# Then patch the metadata
-patched_data <- patch_metadata(
-  data = athlete_metadata,
-  patch_file = "corrections.xlsx",
-  fields_to_patch = c("sex", "dateOfBirth")
-)
+\donttest{
+if (FALSE) {
+  # Create an Excel file with columns: profileId, sex, dateOfBirth
+  # Then patch the metadata
+  patched_data <- patch_metadata(
+    data = athlete_metadata,
+    patch_file = "corrections.xlsx",
+    fields_to_patch = c("sex", "dateOfBirth")
+  )
 
-# Check results
-table(patched_data$sex)
+  # Check results
+  table(patched_data$sex)
+}
 }
 }

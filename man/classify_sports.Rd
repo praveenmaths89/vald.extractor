@@ -32,9 +32,11 @@ naming conventions into a clean categorical variable. This is the core
 Classify Sports from Group Names
 }
 \examples{
-\dontrun{
-metadata <- standardize_vald_metadata(profiles, groups)
-metadata <- classify_sports(metadata)
-table(metadata$sports_clean)
+\donttest{
+if (FALSE) {
+  metadata <- standardize_vald_metadata(profiles, groups)
+  metadata <- classify_sports(metadata)
+  table(metadata$sports_clean)
+}
 }
 }

@@ -40,14 +40,16 @@ token management, pagination, and robust JSON parsing.
 Fetch VALD Metadata via OAuth2
 }
 \examples{
-\dontrun{
-metadata <- fetch_vald_metadata(
-  client_id = "your_client_id",
-  client_secret = "your_client_secret",
-  tenant_id = "your_tenant_id"
-)
+\donttest{
+if (FALSE) {
+  metadata <- fetch_vald_metadata(
+    client_id = "your_client_id",
+    client_secret = "your_client_secret",
+    tenant_id = "your_tenant_id"
+  )
 
-profiles <- metadata$profiles
-groups <- metadata$groups
+  profiles <- metadata$profiles
+  groups <- metadata$groups
+}
 }
 }

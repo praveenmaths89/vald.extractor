@@ -32,11 +32,13 @@ sports classification logic.
 Standardize VALD Metadata
 }
 \examples{
-\dontrun{
-metadata <- fetch_vald_metadata(client_id, client_secret, tenant_id)
-clean_metadata <- standardize_vald_metadata(
-  profiles = metadata$profiles,
-  groups = metadata$groups
-)
+\donttest{
+if (FALSE) {
+  metadata <- fetch_vald_metadata(client_id, client_secret, tenant_id)
+  clean_metadata <- standardize_vald_metadata(
+    profiles = metadata$profiles,
+    groups = metadata$groups
+  )
+}
 }
 }

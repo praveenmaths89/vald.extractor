@@ -1,0 +1,45 @@
+Dear Editors of The R Journal,
+
+We are pleased to submit our manuscript "vald.extractor: A Robust Pipeline for VALD ForceDecks Data Extraction and Analysis" for consideration for publication in The R Journal.
+
+The vald.extractor package addresses critical challenges faced by sports organizations working with VALD ForceDecks force plate systems. This paper is suitable for The R Journal because:
+
+1. **Software Focus**: The paper emphasizes software design, implementation details, and workflow rather than methodological contributions. We describe the fault-tolerant batch architecture, automated domain taxonomy system, and generic programming patterns that make the package production-ready.
+
+2. **Significant Impact**: Multi-sport organizations, national sport institutes, and university athletic departments routinely collect force plate data from hundreds of athletes. This package reduces hours of manual data preparation to minutes of automated processing, with direct operational impact.
+
+3. **Novel Contributions**:
+   - Chunked batch processing with fault tolerance for API data extraction at scale
+   - Automated sports taxonomy classification using regex patterns
+   - Generic test-type programming through suffix removal, enabling code reuse
+
+4. **CRAN Availability**: The package is available on CRAN (pending final review), fully documented with comprehensive function help, vignettes, and unit tests. All code is open source and reproducible.
+
+5. **Community Interest**: The package extends the existing valdr package and fills a gap in the sports science R ecosystem. It provides production-ready tooling for a growing community of practitioners using VALD systems worldwide.
+
+The manuscript follows R Journal guidelines:
+- Focuses on software design and implementation, not methodology
+- Includes complete reproducible workflow examples
+- Describes technical details, performance considerations, and limitations
+- Provides comparison to existing approaches
+- Written for a broad R audience, avoiding field-specific jargon
+
+All code and examples are fully reproducible. The package has comprehensive unit tests, documentation, and a complete end-to-end vignette. All dependencies are stable, widely-used packages available on CRAN.
+
+We believe this paper will be of interest to:
+- Sports scientists and performance staff working with force plate data
+- R programmers interested in API batch processing patterns
+- Data analysts in multi-organizational settings requiring automated data standardization
+- Software developers building domain-specific data pipelines
+
+Thank you for considering our submission. We look forward to your feedback and are happy to address any questions or concerns.
+
+Sincerely,
+
+Praveen D Chougale
+Independent Researcher
+praveenmaths89@gmail.com
+
+Usha Anathakumar
+Shailesh J. Mehta School of Management, IIT Bombay
+usha@som.iitb.ac.in

@@ -27,15 +27,17 @@
 #' @importFrom data.table rbindlist
 #'
 #' @examples
-#' \dontrun{
-#' metadata <- fetch_vald_metadata(
-#'   client_id = "your_client_id",
-#'   client_secret = "your_client_secret",
-#'   tenant_id = "your_tenant_id"
-#' )
+#' \donttest{
+#' if (FALSE) {
+#'   metadata <- fetch_vald_metadata(
+#'     client_id = "your_client_id",
+#'     client_secret = "your_client_secret",
+#'     tenant_id = "your_tenant_id"
+#'   )
 #'
-#' profiles <- metadata$profiles
-#' groups <- metadata$groups
+#'   profiles <- metadata$profiles
+#'   groups <- metadata$groups
+#' }
 #' }
 fetch_vald_metadata <- function(client_id, client_secret, tenant_id,
                                  region = "aue", verbose = TRUE) {
@@ -253,12 +255,14 @@ fetch_vald_metadata <- function(client_id, client_secret, tenant_id,
 #' @importFrom tidyr unnest_longer
 #'
 #' @examples
-#' \dontrun{
-#' metadata <- fetch_vald_metadata(client_id, client_secret, tenant_id)
-#' clean_metadata <- standardize_vald_metadata(
-#'   profiles = metadata$profiles,
-#'   groups = metadata$groups
-#' )
+#' \donttest{
+#' if (FALSE) {
+#'   metadata <- fetch_vald_metadata(client_id, client_secret, tenant_id)
+#'   clean_metadata <- standardize_vald_metadata(
+#'     profiles = metadata$profiles,
+#'     groups = metadata$groups
+#'   )
+#' }
 #' }
 standardize_vald_metadata <- function(profiles, groups, verbose = TRUE) {
 
@@ -358,10 +362,12 @@ standardize_vald_metadata <- function(profiles, groups, verbose = TRUE) {
 #' @importFrom stringr str_detect regex
 #'
 #' @examples
-#' \dontrun{
-#' metadata <- standardize_vald_metadata(profiles, groups)
-#' metadata <- classify_sports(metadata)
-#' table(metadata$sports_clean)
+#' \donttest{
+#' if (FALSE) {
+#'   metadata <- standardize_vald_metadata(profiles, groups)
+#'   metadata <- classify_sports(metadata)
+#'   table(metadata$sports_clean)
+#' }
 #' }
 classify_sports <- function(data, group_col = "all_group_names",
                            output_col = "sports_clean") {

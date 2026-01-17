@@ -35,18 +35,20 @@ users to write one analysis function that works for any test type.
 Split Wide-Format Data by Test Type
 }
 \examples{
-\dontrun{
-# After joining tests, trials, and metadata into wide format
-test_datasets <- split_by_test(
-  data = final_analysis_data,
-  metadata_cols = c("profileId", "sex", "Testdate", "age", "sports")
-)
+\donttest{
+if (FALSE) {
+  # After joining tests, trials, and metadata into wide format
+  test_datasets <- split_by_test(
+    data = final_analysis_data,
+    metadata_cols = c("profileId", "sex", "Testdate", "age", "sports")
+  )
 
-# Access individual test datasets
-cmj_data <- test_datasets$CMJ
-dj_data <- test_datasets$DJ
+  # Access individual test datasets
+  cmj_data <- test_datasets$CMJ
+  dj_data <- test_datasets$DJ
 
-# Note: Column names are now generic (e.g., "PEAK_FORCE_Both" not "PEAK_FORCE_Both_CMJ")
-# This allows you to write one function that works for all test types
+  # Note: Column names are now generic (e.g., "PEAK_FORCE_Both" not "PEAK_FORCE_Both_CMJ")
+  # This allows you to write one function that works for all test types
+}
 }
 }

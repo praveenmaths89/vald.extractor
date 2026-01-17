@@ -11,3 +11,16 @@
 ^\.env$
 ^package-lock\.json$
 ^node_modules$
+^CRAN_FIXES_SUMMARY\.md$
+^RESUBMISSION_GUIDE\.md$
+^RJournal_submission$
+^SUBMISSION_README\.md$
+^create_rjournal_article\.R$
+^CRAN_COMPLIANCE_VERIFICATION\.md$
+^FINAL_SUBMISSION_STEPS\.md$
+^VERIFICATION_PROOF\.md$
+^COMPLETE_FIX_VERIFICATION\.md$
+^FIX_SUMMARY\.md$
+^READY_TO_SUBMIT\.md$
+^KEYCHAIN_POPUP_INFO\.md$
+^FINAL_INSTRUCTIONS\.md$

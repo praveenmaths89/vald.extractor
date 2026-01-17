@@ -36,12 +36,14 @@ Can be grouped by test type, sex, sport, or any combination thereof.
 Generate Summary Statistics for VALD Metrics
 }
 \examples{
-\dontrun{
-test_datasets <- split_by_test(final_analysis_data)
-cmj_summary <- summary_vald_metrics(
-  data = test_datasets$CMJ,
-  group_vars = c("sex", "sports")
-)
-print(cmj_summary)
+\donttest{
+if (FALSE) {
+  test_datasets <- split_by_test(final_analysis_data)
+  cmj_summary <- summary_vald_metrics(
+    data = test_datasets$CMJ,
+    group_vars = c("sex", "sports")
+  )
+  print(cmj_summary)
+}
 }
 }

@@ -14,6 +14,10 @@ library(tidyr)
 # CONFIGURATION
 # ==============================================================================
 
+# Set up temporary directory for outputs (CRAN compliance)
+output_dir <- tempdir()
+cat("Output files will be saved to:", output_dir, "\n\n")
+
 # Replace with your actual credentials
 MY_CLIENT_ID     <- "your_client_id_here"
 MY_CLIENT_SECRET <- "your_client_secret_here"
@@ -200,8 +204,9 @@ if ("CMJ" %in% names(test_datasets)) {
   print(head(cmj_summary, 10))
 
   # Save to CSV
-  write.csv(cmj_summary, "cmj_summary.csv", row.names = FALSE)
-  cat("\nSaved to: cmj_summary.csv\n\n")
+  output_file <- file.path(output_dir, "cmj_summary.csv")
+  write.csv(cmj_summary, output_file, row.names = FALSE)
+  cat("\nSaved to:", output_file, "\n\n")
 }
 
 # ==============================================================================
@@ -222,8 +227,9 @@ if ("CMJ" %in% names(test_datasets)) {
     facet_col = "sex",
     title = "CMJ Peak Force Trends by Athlete"
   )
-  ggsave("cmj_trends.png", p1, width = 10, height = 6, dpi = 300)
-  cat("Saved to: cmj_trends.png\n")
+  output_file <- file.path(output_dir, "cmj_trends.png")
+  ggsave(output_file, p1, width = 10, height = 6, dpi = 300)
+  cat("Saved to:", output_file, "\n")
 
   # Plot 2: Cross-sectional comparison
   cat("Creating cross-sectional comparison plot...\n")
@@ -234,8 +240,9 @@ if ("CMJ" %in% names(test_datasets)) {
     fill_col = "sex",
     title = "CMJ Peak Force by Sport and Sex"
   )
-  ggsave("cmj_comparison.png", p2, width = 10, height = 6, dpi = 300)
-  cat("Saved to: cmj_comparison.png\n")
+  output_file <- file.path(output_dir, "cmj_comparison.png")
+  ggsave(output_file, p2, width = 10, height = 6, dpi = 300)
+  cat("Saved to:", output_file, "\n")
 
   # Plot 3: Jump height comparison
   if ("JUMP_HEIGHT_Both" %in% names(test_datasets$CMJ)) {
@@ -247,17 +254,20 @@ if ("CMJ" %in% names(test_datasets)) {
       fill_col = "sex",
       title = "CMJ Jump Height by Sport and Sex"
     )
-    ggsave("cmj_jumpheight.png", p3, width = 10, height = 6, dpi = 300)
-    cat("Saved to: cmj_jumpheight.png\n")
+    output_file <- file.path(output_dir, "cmj_jumpheight.png")
+    ggsave(output_file, p3, width = 10, height = 6, dpi = 300)
+    cat("Saved to:", output_file, "\n")
   }
 }
 
 cat("\n=== WORKFLOW COMPLETE ===\n")
+cat("All generated files are in:", output_dir, "\n")
 cat("Generated files:\n")
 cat("  - cmj_summary.csv\n")
 cat("  - cmj_trends.png\n")
 cat("  - cmj_comparison.png\n")
-cat("  - cmj_jumpheight.png\n\n")
+cat("  - cmj_jumpheight.png\n")
+cat("  - vald_analysis_workspace.RData\n\n")
 
 # ==============================================================================
 # STEP 10: SAVE WORKSPACE FOR FUTURE ANALYSIS
@@ -265,15 +275,16 @@ cat("  - cmj_jumpheight.png\n\n")
 
 cat("=== STEP 10: SAVING WORKSPACE ===\n")
 
+output_file <- file.path(output_dir, "vald_analysis_workspace.RData")
 save(
   test_datasets,
   athlete_metadata,
   final_analysis_data,
-  file = "vald_analysis_workspace.RData"
+  file = output_file
 )
 
-cat("Workspace saved to: vald_analysis_workspace.RData\n")
-cat("Load it in future sessions with: load('vald_analysis_workspace.RData')\n\n")
+cat("Workspace saved to:", output_file, "\n")
+cat("Load it in future sessions with: load('", output_file, "')\n\n", sep = "")
 
 # ==============================================================================
 # ADVANCED EXAMPLE: GENERIC ANALYSIS ACROSS TEST TYPES

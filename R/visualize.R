@@ -24,13 +24,15 @@
 #' @importFrom stats sd
 #'
 #' @examples
-#' \dontrun{
-#' test_datasets <- split_by_test(final_analysis_data)
-#' cmj_summary <- summary_vald_metrics(
-#'   data = test_datasets$CMJ,
-#'   group_vars = c("sex", "sports")
-#' )
-#' print(cmj_summary)
+#' \donttest{
+#' if (FALSE) {
+#'   test_datasets <- split_by_test(final_analysis_data)
+#'   cmj_summary <- summary_vald_metrics(
+#'     data = test_datasets$CMJ,
+#'     group_vars = c("sex", "sports")
+#'   )
+#'   print(cmj_summary)
+#' }
 #' }
 summary_vald_metrics <- function(data, group_vars = c("sex", "sports"),
                                  exclude_cols = c("profileId", "athleteId", "testId",
@@ -99,28 +101,30 @@ summary_vald_metrics <- function(data, group_vars = c("sex", "sports"),
 #' @importFrom dplyr %>%
 #'
 #' @examples
-#' \dontrun{
-#' test_datasets <- split_by_test(final_analysis_data)
+#' \donttest{
+#' if (FALSE) {
+#'   test_datasets <- split_by_test(final_analysis_data)
 #'
-#' # Plot individual athlete trends
-#' plot_vald_trends(
-#'   data = test_datasets$CMJ,
-#'   metric_col = "PEAK_FORCE_Both",
-#'   group_col = "profileId",
-#'   facet_col = "sex"
-#' )
+#'   # Plot individual athlete trends
+#'   plot_vald_trends(
+#'     data = test_datasets$CMJ,
+#'     metric_col = "PEAK_FORCE_Both",
+#'     group_col = "profileId",
+#'     facet_col = "sex"
+#'   )
 #'
-#' # Plot sport-level averages
-#' sport_avg <- test_datasets$CMJ %>%
-#'   group_by(Testdate, sports) %>%
-#'   summarise(avg_force = mean(PEAK_FORCE_Both, na.rm = TRUE))
+#'   # Plot sport-level averages
+#'   sport_avg <- test_datasets$CMJ %>%
+#'     group_by(Testdate, sports) %>%
+#'     summarise(avg_force = mean(PEAK_FORCE_Both, na.rm = TRUE))
 #'
-#' plot_vald_trends(
-#'   data = sport_avg,
-#'   date_col = "Testdate",
-#'   metric_col = "avg_force",
-#'   group_col = "sports"
-#' )
+#'   plot_vald_trends(
+#'     data = sport_avg,
+#'     date_col = "Testdate",
+#'     metric_col = "avg_force",
+#'     group_col = "sports"
+#'   )
+#' }
 #' }
 plot_vald_trends <- function(data, date_col = "Testdate", metric_col,
                             group_col = NULL, facet_col = NULL,
@@ -210,17 +214,19 @@ plot_vald_trends <- function(data, date_col = "Testdate", metric_col,
 #' @importFrom dplyr %>%
 #'
 #' @examples
-#' \dontrun{
-#' test_datasets <- split_by_test(final_analysis_data)
+#' \donttest{
+#' if (FALSE) {
+#'   test_datasets <- split_by_test(final_analysis_data)
 #'
-#' # Compare CMJ peak force across sports and sex
-#' plot_vald_compare(
-#'   data = test_datasets$CMJ,
-#'   metric_col = "PEAK_FORCE_Both",
-#'   group_col = "sports",
-#'   fill_col = "sex",
-#'   title = "Peak Force Comparison by Sport and Sex"
-#' )
+#'   # Compare CMJ peak force across sports and sex
+#'   plot_vald_compare(
+#'     data = test_datasets$CMJ,
+#'     metric_col = "PEAK_FORCE_Both",
+#'     group_col = "sports",
+#'     fill_col = "sex",
+#'     title = "Peak Force Comparison by Sport and Sex"
+#'   )
+#' }
 #' }
 plot_vald_compare <- function(data, metric_col, group_col = "sports",
                              fill_col = "sex", title = NULL, y_label = NULL) {
