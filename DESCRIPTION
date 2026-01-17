@@ -6,7 +6,7 @@ Authors@R: c(
     person("Praveen", "D Chougale",
            email = "praveenmaths89@gmail.com",
            role = c("aut", "cre")),
-    person("Usha", "Anathakumar",
+    person("Usha", "Ananthakumar",
            email = "usha@som.iitb.ac.in",
            role = "aut")
     )
