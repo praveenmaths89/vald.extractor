@@ -1,7 +1,7 @@
 Package: vald.extractor
 Type: Package
 Title: Robust Pipeline for 'VALD' 'ForceDecks' Data Extraction and Analysis
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Praveen", "D Chougale",
            email = "praveenmaths89@gmail.com",

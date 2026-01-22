@@ -1,3 +1,9 @@
+# vald.extractor 0.1.1
+
+## Metadata Fix
+
+* Corrected spelling of author name in package metadata.
+
 # vald.extractor 0.1.0
 
 ## Initial Release

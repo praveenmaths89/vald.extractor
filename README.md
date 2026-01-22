@@ -224,7 +224,7 @@ If you use `vald.extractor` in published research, please cite:
 
 ```
 Chougale PD, Ananthakumar U (2026). vald.extractor: Robust Pipeline for VALD
-ForceDecks Data Extraction and Analysis. R package version 0.1.0.
+ForceDecks Data Extraction and Analysis. R package version 0.1.1.
 https://github.com/praveenmaths89/vald.extractor
 ```
 
